@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Ganashree C. A. | Portfolio</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f5f9ff;
+        color: #1f2937;
+        line-height: 1.6;
+      }
+
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: #ffffff;
+        border-bottom: 1px solid #dbe7f5;
+        padding: 16px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 22px;
+        font-weight: bold;
+        color: #1769aa;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #374151;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #1769aa;
+      }
+
+      .hero {
+        min-height: 85vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 60px 8%;
+        background: linear-gradient(135deg, #eaf4ff, #ffffff);
+      }
+
+      .hero-content {
+        max-width: 800px;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+        color: #123b63;
+        margin-bottom: 10px;
+      }
+
+      .hero h2 {
+        font-size: 24px;
+        color: #1769aa;
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        color: #4b5563;
+        max-width: 700px;
+        margin: auto;
+      }
+
+      .button {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 12px 25px;
+        background: #1769aa;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .button:hover {
+        background: #0f4f82;
+        transform: translateY(-2px);
+      }
+
+      section {
+        padding: 70px 8%;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .section-title h2 {
+        font-size: 34px;
+        color: #123b63;
+        margin-bottom: 10px;
+      }
+
+      .section-title p {
+        color: #6b7280;
+      }
+
+      .about-card {
+        background: white;
+        padding: 35px;
+        border-radius: 14px;
+        box-shadow: 0 5px 20px rgba(23, 105, 170, 0.08);
+        border: 1px solid #e0ebf7;
+      }
+
+      .about-card p {
+        margin-bottom: 18px;
+        color: #4b5563;
+      }
+
+      .goal {
+        margin-top: 20px;
+        padding: 20px;
+        background: #eef7ff;
+        border-left: 4px solid #1769aa;
+        border-radius: 8px;
+      }
+
+      .goal strong {
+        color: #123b63;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+      }
+
+      .project-card {
+        background: white;
+        padding: 28px;
+        border-radius: 14px;
+        border: 1px solid #e0ebf7;
+        box-shadow: 0 5px 20px rgba(23, 105, 170, 0.07);
+        transition: 0.3s;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(23, 105, 170, 0.13);
+      }
+
+      .project-number {
+        display: inline-block;
+        background: #1769aa;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+
+      .project-card h3 {
+        color: #123b63;
+        margin-bottom: 12px;
+        font-size: 21px;
+      }
+
+      .project-card p {
+        color: #596579;
+        margin-bottom: 18px;
+      }
+
+      .project-link {
+        color: #1769aa;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .project-link:hover {
+        text-decoration: underline;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+      }
+
+      .skill {
+        background: white;
+        padding: 20px;
+        text-align: center;
+        border-radius: 12px;
+        border: 1px solid #e0ebf7;
+        color: #123b63;
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(23, 105, 170, 0.06);
+        transition: 0.3s;
+      }
+
+      .skill:hover {
+        transform: translateY(-3px);
+        border-color: #8bbce0;
+      }
+
+      .contact-card {
+        background: white;
+        text-align: center;
+        padding: 40px;
+        border-radius: 14px;
+        border: 1px solid #e0ebf7;
+        box-shadow: 0 5px 20px rgba(23, 105, 170, 0.08);
+      }
+
+      .contact-card p {
+        color: #596579;
+      }
+
+      footer {
+        text-align: center;
+        padding: 25px;
+        background: #123b63;
+        color: white;
+        margin-top: 30px;
+      }
+
+      footer p {
+        font-size: 14px;
+      }
+
+      @media (max-width: 900px) {
+        .skills-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 650px) {
+        nav {
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        nav ul {
+          gap: 14px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .hero h1 {
+          font-size: 38px;
+        }
+
+        .hero h2 {
+          font-size: 20px;
+        }
+
+        .hero p {
+          font-size: 16px;
+        }
+
+        section {
+          padding: 50px 6%;
+        }
+
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .about-card,
+        .project-card,
+        .contact-card {
+          padding: 24px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo">Ganashree C. A.</div>
+
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Ganashree C. A.</h1>
+
+        <h2>First-Year B.Tech Computer Science and Engineering Student</h2>
+
+        <p>
+          Developing technical skills through programming, GitHub,
+          problem-solving, and software development activities. Interested in
+          learning new technologies and building practical projects while
+          progressing through my studies.
+        </p>
+
+        <a href="#projects" class="button">View My Activities</a>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="section-title">
+        <h2>About</h2>
+        <p>A little about my learning journey</p>
+      </div>
+
+      <div class="about-card">
+        <p>
+          I am Ganashree C. A., a first-year B.Tech Computer Science and
+          Engineering student. I am developing my technical skills through
+          programming, GitHub, problem-solving, and software development
+          activities.
+        </p>
+
+        <p>
+          I am interested in learning new technologies and building practical
+          projects as I progress in my studies.
+        </p>
+
+        <div class="goal">
+          <strong>Career / Learning Goal:</strong>
+          <p>
+            My goal is to strengthen my programming and problem-solving skills,
+            build practical software projects, improve my GitHub portfolio, and
+            prepare for future internships and software development
+            opportunities.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-title">
+        <h2>Projects</h2>
+        <p>My completed development and learning activities</p>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <span class="project-number">Activity 1</span>
+
+          <h3>Development Environment Setup</h3>
+
+          <p>
+            Completed the development environment setup activity using Visual
+            Studio Code and worked with a Hello World program.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <span class="project-number">Activity 2</span>
+
+          <h3>Git and GitHub</h3>
+
+          <p>
+            Learned the basics of Git and GitHub, created repositories, made
+            commits, and pushed my work to GitHub.
+          </p>
+
+          <a
+            href="https://github.com/Ganashree222/Portfolio-Building-Studio/blob/master/Activity2/hello.c"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-link"
+          >
+            View Hello World Repository →
+          </a>
+        </div>
+
+        <div class="project-card">
+          <span class="project-number">Activity 3</span>
+
+          <h3>GitLens and Live Share</h3>
+
+          <p>
+            Explored GitLens for understanding Git history and changes and
+            learned about Live Share for collaborative programming.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <span class="project-number">Activity 4</span>
+
+          <h3>LeetCode Practice</h3>
+
+          <p>
+            Created and worked on a LeetCode solutions repository and practiced
+            programming problems involving arrays and strings, basic algorithms,
+            stacks, and linked lists.
+          </p>
+
+          <a
+            href="https://github.com/Ganashree222/leetcode-solutions"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-link"
+          >
+            View LeetCode Repository →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-title">
+        <h2>Skills</h2>
+        <p>Technologies and areas I am learning</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill">C Programming</div>
+        <div class="skill">Java</div>
+        <div class="skill">HTML and CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">React</div>
+        <div class="skill">Git and GitHub</div>
+        <div class="skill">Visual Studio Code</div>
+        <div class="skill">Basic Problem-Solving</div>
+        <div class="skill">Data Structures</div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-title">
+        <h2>Contact</h2>
+        <p>Connect with me</p>
+      </div>
+
+      <div class="contact-card">
+        <p>
+          I am continuing to learn, practice programming, and build my technical
+          portfolio as a computer science student.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        © 2026 Ganashree C. A. | B.Tech Computer Science and Engineering Student
+      </p>
+    </footer>
+  </body>
+</html>
